@@ -1,9 +1,20 @@
 \documentclass[a4paper,oneside]{report}
-\usepackage{cmap}
-\usepackage[utf8]{inputenc}
-\usepackage[T2A]{fontenc}
-%\usepackage[english,french,latin,russian]{babel}
-\usepackage[english,french,russian]{babel}
+
+\usepackage{ifxetex}
+
+\ifxetex
+    \usepackage{fontspec}
+    \setmainfont{CMU Serif}
+    \usepackage{polyglossia}
+    \setdefaultlanguage[babelshorthands=true]{russian}
+    \setotherlanguages{english,french,greek,latin}
+\else
+    \usepackage{cmap}
+    \usepackage[utf8]{inputenc}
+    \usepackage[T2A]{fontenc}
+    \usepackage[english,french,greek,latin,russian]{babel}
+\fi
+
 \usepackage{indentfirst}
 \usepackage{misccorr}
 
@@ -14,7 +25,7 @@
 ]{geometry}
 
 \usepackage{csquotes}
-\usepackage{amsmath, amssymb}
+\usepackage{amsmath,amssymb}
 
 \usepackage{hyperref}
 \hypersetup{
