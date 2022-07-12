@@ -1,10 +1,15 @@
 \documentclass[a4paper,oneside]{report}
 
-\usepackage{ifxetex}
+\usepackage{ifluatex,ifxetex}
 
+%\ifluatex
 \ifxetex
     \usepackage{fontspec}
+    \defaultfontfeatures{Ligatures=TeX}
     \setmainfont{CMU Serif}
+    \newfontfamily\cyrillicfont{CMU Serif}
+    \newfontfamily\greekfont{CMU Serif}
+
     \usepackage{polyglossia}
     \setdefaultlanguage[babelshorthands=true]{russian}
     \setotherlanguages{english,french,greek,latin}
@@ -27,12 +32,11 @@
 \usepackage{csquotes}
 \usepackage{amsmath,amssymb}
 
-\usepackage{hyperref}
+\usepackage[unicode]{hyperref}
 \hypersetup{
     pdfauthor={Константин Димитриакис},
     pdftitle={Мюальфа Тэтаэта},
     pdfkeywords={IHES, Princeton},
-    unicode=true,
     colorlinks=true
 }
 
